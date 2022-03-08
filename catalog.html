@@ -1,0 +1,330 @@
+<!DOCTYPE html> 
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Каталог</title>	 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/style.css" rel="stylesheet"> 
+		<link href="css/style_font.css" rel="stylesheet"> 	
+		<link href="css/checkbox.css" rel="stylesheet"> 
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato&family=Rubik&display=swap" rel="stylesheet">
+	</head> 
+	<body>
+			<div class="page">
+				<header>
+					<div>
+						<img src="img/лого.svg" alt="">
+					</div>
+					<button onclick="menu()"></button>
+					<nav>
+						<a href="#">Почему мы?</a>
+						<a href="#">Номера</a>
+						<a href="#">Отзывы</a>
+						<a href="#">Как нас найти</a>
+					</nav>					
+				</header>
+
+				<div class="header_mobile">
+					<div class="header_box">
+						<div>
+							<img src="img/лого.svg" alt="">
+						</div>
+						<nav>
+							<a href="#"><b>Почему мы?   </b>  </a>
+							<a href="#"><b>Номера       </b> </a>
+							<a href="#"><b>Отзывы       </b>  </a>
+							<a href="#"><b>Как нас найти</b></a>
+						</nav>
+						<p>8 (800) 333-55-99</p>
+						<p><img src="img/icon_soc1.svg" alt=""> <img src="img/icon_soc2.svg" alt=""><img src="img/icon_soc3.svg" alt=""></p>
+						<img onclick="menu_closed()" src="img/krest.svg" alt="">
+					</div>
+				</div>
+
+				<main>
+					<div class="select_box_button"> 
+						<h1>Наши номера</h1>
+						<div class="select_box">
+							<button onclick="open_filtr()"><img  src="img/filtr.svg" alt="">Фильтры</button>
+							<div class="select2">
+								<p onclick="select()"  id="select_active" class="select_item_active" value="По площади" ><img src="img/arrow_filtr.svg" alt="">По площади</p>	
+								<div class="select3" id="select3">
+									<div class="select4">
+										<p onclick="sort(1,'text14','p', 'card_item'),select3(1) " id="select_item1" class="select_item" value="По площади" ><img src="img/arrow_filtr.svg" alt="">По площади</p>
+										<p onclick="sort(2,'text14','p', 'card_item'),select3(2) " id="select_item2" class="select_item" value="По площади вниз">   <img src="img/arrow_filtr2.svg" alt="">По площади</p>
+										<p onclick="sort(1,'text14','t', 'card_item'),select3(3) " id="select_item3" class="select_item" value="По цене вверх">		<img src="img/arrow_filtr.svg" alt=""> По цене</p>
+										<p onclick="sort(2,'text14','t', 'card_item'),select3(4) " id="select_item4" class="select_item" value="По цене вниз">		<img src="img/arrow_filtr2.svg" alt="">По цене</p>
+									</div>
+									<div onclick="select2()" class="select_img"><img src="img/select2.svg" alt=""></div>
+								</div>
+							</div>
+						</div> 	
+					</div>
+
+					<div class="Container_card_filtr">
+						<div class="filtr">
+							<img onclick="closed_filtr()" src="img/krest.svg" alt="">
+							<form action="#" class="form2">
+								<div > 
+									<p class="margin_top">Цена за сутки,</p>
+									<div id="textbox">
+										<input type="text" name="price" id="price1" placeholder="от 100">
+										<input type="text" name="price" id="price2"  placeholder="до 600">
+									</div>
+								</div>
+								<div >
+									<p>Площадь</p>
+									<label onclick="filtr('p','text14',this.id, 'card_item')" id="square1" class="custom-checkbox" ><input type="checkbox" name="square" checked="checked"><span>0,63 м2</span></label>
+									<label onclick="filtr('p','text14',this.id, 'card_item')" id="square2" class="custom-checkbox" ><input type="checkbox" name="square" checked="checked"><span>0,90 м2</span></label>
+									<label onclick="filtr('p','text14',this.id, 'card_item')" id="square3" class="custom-checkbox" ><input type="checkbox" name="square" checked="checked"><span>1,13 м2</span></label>
+									<label onclick="filtr('p','text14',this.id, 'card_item')" id="square4" class="custom-checkbox" ><input type="checkbox" name="square" checked="checked"><span>1,56 м2</span></label>
+									<label onclick="filtr('p','text14',this.id, 'card_item')" id="square5" class="custom-checkbox" ><input type="checkbox" name="square" checked="checked"><span>2,56 м2</span></label>
+									<label onclick="filtr('p','text14',this.id, 'card_item')" id="square6" class="custom-checkbox" ><input type="checkbox" name="square" checked="checked"><span>2,88 м2</span></label>
+								</div>
+								<div >
+									<p>Оснащение номера</p>
+									<label onclick="filtr2(1)" class="custom-checkbox" ><input type="checkbox" name="equipment[]" checked="checked" id=""><span>Пустой номер</span></label>
+									<label onclick="filtr2(1)" class="custom-checkbox" ><input type="checkbox" name="equipment[]" checked="checked" id=""><span>Лежак</span></label>
+									<label onclick="filtr2(1)" class="custom-checkbox" ><input type="checkbox" name="equipment[]" checked="checked" id=""><span>Когтеточка</span></label>
+									<label onclick="filtr2(1)" class="custom-checkbox" ><input type="checkbox" name="equipment[]" checked="checked" id=""><span>Игровой-комплекс</span></label>
+									<label onclick="target2(this.id)" id="res14" class="custom-checkbox" ><input type="checkbox" name="equipment[]" checked="checked" id=""><span>Домик</span></label>									
+								</div> 
+								<button class="button_reset" onclick="resetButtonBind()">Сбросить фильтр</button>
+							</form>
+						</div>
+						
+						<div class="card" id="text14">
+
+							<div class="card_item">
+								<img src="img/card_img3.svg" alt="">
+								<div class="card_text_button">
+									<div>
+										<h2>Комфорт</h2>
+										<p>Размеры (ШхГхВ) - 100х125х180 см</p>
+										<p class="p">Площадь - 1,13 м2</p>
+										<p class="card_icon">Оснащение номера<img src="img/icon_card3.svg" alt=""><img src="img/icon_card4.svg" alt=""><img src="img/icon_card6.svg" alt=""></p>
+										<p>Цена за сутки:<span class="t"> 250₽</span></p>										
+									</div>
+									<button onclick="bron()">Забронировать<img src="img/button_icon.svg" alt=""></button>
+								</div>
+							</div>
+
+							<div class="card_item">
+								<img src="img/card_img1.svg" alt="">
+								<div class="card_text_button">
+									<div>
+										<h2>Эконом</h2>
+										<p>Размеры (ШхГхВ) - 90х70х180 см </p>
+										<p class="p">Площадь - 0,63 м2</p>
+										<p class="card_icon" >Оснащение номера<img src="img/icon_card2.svg" alt=""></p>
+										<p>Цена за сутки:<span class="t"> 100₽</span></p>										
+									</div>
+									<button onclick="bron()">Забронировать<img src="img/button_icon.svg" alt=""></button>
+								</div>
+							</div >
+
+							<div class="card_item">
+								<img src="img/card_img2.svg" alt="">
+								<div class="card_text_button">
+									<div>
+										<h2>Эконом плюс</h2>
+										<p>Размеры (ШхГхВ) - 90х100х180 см</p>
+										<p class="p">Площадь - 0,90 м2</p>
+										<p class="card_icon">Оснащение номера<img src="img/icon_card3.svg" alt=""><img src="img/icon_card4.svg" alt=""></p>
+										<p>Цена за сутки:<span class="t"> 200₽</span></p>										
+									</div>
+									<button onclick="bron()">Забронировать<img src="img/button_icon.svg" alt=""></button>
+								</div>
+							</div>
+
+							<div class="card_item">
+								<img src="img/card_img2.svg" alt="">
+								<div class="card_text_button">
+									<div>
+										<h2>Эконом плюс</h2>
+										<p>Размеры (ШхГхВ) - 90х100х180 см</p>
+										<p class="p">Площадь - 0,90 м2</p>
+										<p class="card_icon">Оснащение номера<img src="img/icon_card3.svg" alt=""><img src="img/icon_card4.svg" alt=""></p>
+										<p>Цена за сутки:<span class="t"> 200₽</span></p>										
+									</div>
+									<button onclick="bron()">Забронировать<img src="img/button_icon.svg" alt=""></button>
+								</div>
+							</div>
+
+							<div class="card_item">
+								<img src="img/card_img3.svg" alt="">
+								<div class="card_text_button">
+									<div>
+										<h2>Комфорт</h2>
+										<p>Размеры (ШхГхВ) - 100х125х180 см</p>
+										<p class="p">Площадь - 1,13 м2</p>
+										<p class="card_icon">Оснащение номера<img src="img/icon_card3.svg" alt=""><img src="img/icon_card4.svg" alt=""><img src="img/icon_card6.svg" alt=""></p>
+										<p>Цена за сутки:<span class="t"> 250₽</span></p>										
+									</div>
+									<button onclick="bron()">Забронировать<img src="img/button_icon.svg" alt=""></button>
+								</div>
+							</div>
+
+							<div class="card_item">
+								<img src="img/card_img3.svg" alt="">
+								<div class="card_text_button">
+									<div>
+										<h2>Комфорт</h2>
+										<p>Размеры (ШхГхВ) - 100х125х180 см</p>
+										<p class="p">Площадь - 1,13 м2</p>
+										<p class="card_icon">Оснащение номера<img src="img/icon_card3.svg" alt=""><img src="img/icon_card4.svg" alt=""><img src="img/icon_card6.svg" alt=""></p>
+										<p>Цена за сутки:<span class="t"> 250₽</span></p>										
+									</div>
+									<button onclick="bron()">Забронировать<img src="img/button_icon.svg" alt=""></button>
+								</div>
+							</div>
+
+							<div class="card_item" >
+								<img src="img/card_img4.svg" alt="">
+								<div class="card_text_button">
+									<div>
+										<h2>Сьют</h2>
+										<p>Размеры (ШхГхВ) - 125х125х180 см</p>
+										<p class="p">Площадь - 1,56 м2</p>
+										<p class="card_icon">Оснащение номера<img src="img/icon_card3.svg" alt=""><img src="img/icon_card4.svg"><img src="img/icon_card6.svg" alt=""> </p>
+										<p>Цена за сутки:<span class="t"> 350₽</span></p>										
+									</div>
+									<button onclick="bron()">Забронировать<img src="img/button_icon.svg" alt=""></button>
+								</div>
+							</div>
+							 
+							<div class="card_item">
+								<img src="img/card_img5.svg" alt="">
+								<div class="card_text_button">
+									<div>
+										<h2>Люкс</h2>
+										<p>Размеры (ШхГхВ) - 160х160х180 см</p>
+										<p class="p">Площадь - 2,56 м2</p>
+										<p class="card_icon">Оснащение номера<img src="img/icon_card3.svg"><img src="img/icon_card4.svg" alt=""><img src="img/icon_card6.svg" alt=""><img src="img/icon_card5.svg" alt=""> </p>
+										<p>Цена за сутки:<span class="t"> 500₽</span></p>										
+									</div>
+									<button onclick="bron()">Забронировать<img src="img/button_icon.svg" alt=""></button>
+								</div>
+							</div>
+
+							<div class="card_item" >
+								<img src="img/card_img6.svg" alt="">
+								<div class="card_text_button">
+									<div>
+										<h2>Супер-Люкс</h2>
+										<p>Размеры (ШхГхВ) - 180х160х180 см</p>
+										<p class="p">Площадь - 2,88 м2</p>
+										<p class="card_icon">Оснащение номера<img src="img/icon_card3.svg"><img src="img/icon_card4.svg" alt=""><img src="img/icon_card6.svg" alt=""><img src="img/icon_card5.svg" alt=""></p>
+										<p>Цена за сутки:<span class="t"> 600₽</span></p>										
+									</div>
+									<button onclick="bron()">Забронировать<img src="img/button_icon.svg" alt=""></button>
+								</div>
+							</div>	
+							
+							<div class="card_item" >
+								<img src="img/card_img6.svg" alt="">
+								<div class="card_text_button">
+									<div>
+										<h2>Супер-Люкс</h2>
+										<p>Размеры (ШхГхВ) - 180х160х180 см</p>
+										<p class="p">Площадь - 2,88 м2</p>
+										<p class="card_icon">Оснащение номера<img src="img/icon_card3.svg"><img src="img/icon_card4.svg" alt=""><img src="img/icon_card6.svg" alt=""><img src="img/icon_card5.svg" alt=""></p>
+										<p>Цена за сутки:<span class="t"> 600₽</span></p>										
+									</div>
+									<button onclick="bron()">Забронировать<img src="img/button_icon.svg" alt=""></button>
+								</div>
+							</div>
+
+							<div class="card_item" >
+								<img src="img/card_img5.svg" alt="">
+								<div class="card_text_button">
+									<div>
+										<h2>Люкс</h2>
+										<p>Размеры (ШхГхВ) - 160х160х180 см</p>
+										<p class="p">Площадь - 2,56 м2</p>
+										<p class="card_icon">Оснащение номера<img src="img/icon_card3.svg"><img src="img/icon_card4.svg" alt=""><img src="img/icon_card6.svg" alt=""><img src="img/icon_card5.svg" alt=""> </p>
+										<p>Цена за сутки:<span class="t"> 500₽</span></p>										
+									</div>
+									<button onclick="bron()">Забронировать<img src="img/button_icon.svg" alt=""></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="action">
+						<div>
+							<p class="h1">Каждый 7-й день</p>
+							<p class="Big_text">бесплатно!</p>
+							<p class="action_text">Акция действует при размещении
+								в номерах “Люкс” и “Супер-Люкс” </p>
+							<button  class="button_white" onclick="bron()" >Забронировать<img src="img/paw_white.svg" alt=""></button>
+						</div>
+					</div>
+
+					<div class="container_map">
+						<div class="map_text">
+							<p class="h1">Как нас найти</p>
+							<span>Адрес</span>
+							<p>Санкт-Петербург,
+							ул Большая Конюшенная, д 19</p>
+							<span>Режим работы</span>
+							<p>Ежедневно, с 9:00 до 20:00</p>
+							<span>Телефон</span>
+							<p>8 (800) 333-55-99</p>
+							<span>E-mail</span>
+							<p>info@cat-hotel.ru</p>
+							<span>Социальные сети</span>
+							<p><img src="img/icon_soc1.svg" alt=""> <img src="img/icon_soc2.svg" alt=""><img src="img/icon_soc3.svg" alt=""></p>
+						</div>
+						<div class="map" id="map"><script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU"></script></div>
+					</div>
+
+				</main>
+				<footer>
+					<div>
+						<div>
+							<img src="img/лого.svg" alt="">
+						</div>
+
+						<nav>
+							<a href="#">Почему мы?</a>
+							<a href="#">Номера</a>
+							<a href="#">Отзывы</a>
+							<a href="#">Как нас найти</a>
+						</nav>
+					</div>
+					<div>
+						<p><img src="img/Copyright.svg" alt=""> 2019 Все права защищены</p>
+						<p>Политика конфиденциальности</p>
+					</div>
+				</footer>
+			</div>
+
+			
+				<div class="bron">
+					<img onclick="bron_closed()" src="img/krest.svg" alt="">
+					<h2>Забронировать номер</h2>
+					<form action="#">
+						<input type="text" name="name" placeholder="Ваше имя" id="">
+						<input type="text" name="name_pet" placeholder="Имя Питомца" id="">
+						<input type="text" name="telefon" placeholder="Телефон" id="">
+						<input type="text" name="e-mail" placeholder="E-mail" id="">
+						<button type="submit" onclick="bron_closed(),bron_alert()" >Отправить заявку <img src="img/button_icon.svg" alt=""></button>
+					</form>
+				</div>
+
+				<div class="bron_alert">
+					<img src="img/krest.svg" onclick="bron_alert_closed()" alt="">
+					<h2>Спасибо за заявку!</h2>
+					<p>Мы свяжемся с вами в ближайшее время</p>
+					<button onclick="bron_alert_closed()" type="button">Ок<img src="img/button_icon.svg"></button>
+				</div>
+				
+	<script src="JavaScript.js"></script>
+	<script src="map.js"></script>
+	
+	</body> 
+</html>   

@@ -116,6 +116,54 @@ function select3(x1){
     select2();
 }
 
+function open_filtr(){
+    document.querySelector(".filtr").className="filtr2";
+    document.querySelector('.select_box_button').style.opacity = "0.2";
+    document.querySelector('.card').style.opacity = "0.2";
+    document.querySelector('header').style.opacity = "0.2";
+}
+
+function closed_filtr(){
+    document.querySelector(".filtr2").className="filtr";
+    document.querySelector('.select_box_button').style.opacity = "1";
+    document.querySelector('.card').style.opacity = "1";
+    document.querySelector('header').style.opacity = "1";
+}
+
+function menu() {    
+    document.querySelector(".header_mobile").style.display="flex";
+    document.querySelector("header").style.display="none";
+}
+
+function menu_closed() {    
+    document.querySelector(".header_mobile").style.display="none";
+    document.querySelector("header").style.display="flex";
+}
+
+function bron() {    
+    document.querySelector(".bron").style.display="flex";
+    document.querySelector('.page').style.opacity = "0.2";   
+}
+
+function bron_closed(){
+    document.querySelector(".bron").style.display="none";
+    document.querySelector('.page').style.opacity = "1"; 
+}
+
+function bron_alert(){
+    document.querySelector(".bron_alert").style.display="flex";
+    document.querySelector('.page').style.opacity = "0.2"; 
+}
+
+function bron_alert_closed(){
+    document.querySelector(".bron_alert").style.display="none";
+    document.querySelector('.page').style.opacity = "1"; 
+}
+
+
+
+
+
 
 
 

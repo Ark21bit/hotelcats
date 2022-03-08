@@ -3,11 +3,19 @@ body{
 	display: flex;
 	justify-content: center;
 	background-color: #FFFEFD;
+	
+	
+}
+
+[onclick]{
+	cursor: pointer;
 }
 
 .page{
-	width: 86%;
+	width: 86%;	
+	
 }
+
 
 a{
 	text-decoration: none;
@@ -24,7 +32,44 @@ header{
 
 header>button{
 	display: none;
+	
 }
+
+.header_mobile{	
+	position: relative;
+	display: none;
+	background: #FAC663;	
+	min-height: 400px;
+	width: 100vw;
+	margin: 0 -7%;
+}
+.header_mobile>.header_box>nav{
+	margin-top: 25px;
+    display: flex;
+    column-gap: 30px;
+    flex-direction: column;
+	margin-bottom: 40px;
+}
+.header_mobile>.header_box>p>img{
+	margin-right: 20px;
+}
+
+.header_mobile>.header_box>nav>a{
+	margin-top: 25px;
+}
+
+.header_box{
+ margin: 15px;
+}
+
+.header_box>img{
+	position: absolute;
+	top: 25px;
+	right: 25px;
+}
+
+
+
 
 h1{
 	margin: 70px 0 60px 0;
@@ -35,11 +80,26 @@ nav{
 	column-gap:30px;
 }
 
+.select_box_button{
+display: flex;
+justify-content: space-between;
+}
+
 .select_box{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	
+}
+
+.select_box>button{
+	display: none;
+	width: 121px;
+	height: 35px;
+	background: #FFFFFF;
+	box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.18);
+	border-radius: 25px;
+	border: none;
 }
 
 .select2{
@@ -50,7 +110,7 @@ nav{
 .select3{
 	display: none;
 	position: absolute;
-	top:0;
+	top:-17.5px;
 	left: 0;
 	min-width: 174px;
 	background: #FFFFFF;
@@ -102,7 +162,8 @@ nav{
 	flex:3;	
 	gap:30px;
 	flex-wrap: wrap;
-	align-content: flex-start
+	align-content: flex-start;
+	
 }
 
 .card img{
@@ -117,7 +178,7 @@ nav{
 	
 }
 
-.card_item button{
+.card_item button, .bron>form>button,.bron_alert>button{
 	display: flex;
 	border: none;
 	background-color: #FF7236;
@@ -171,6 +232,7 @@ img{
 
 #textbox input{
 	width: 40%;
+	max-width: 120px;
 	border: 1px solid #adb5bd;
 	
 
@@ -288,30 +350,109 @@ footer>div{
     justify-content: space-between;
 }
 
-.card_item6{
-	order:6;
+
+.filtr2{
+	position: absolute;
+	width: 44%;
+	top:136px;
+	left:28%;
+	background: #FFFEFD;
+	box-shadow: 0px 4px 25px rgba(153, 153, 153, 0.25);
+	border-radius: 6px;
+	z-index: 100;
 }
 
-.card_item5{
-	order:5;
+.filtr2>img{
+	position: absolute;
+	right:25px;
+	top:25px;
 }
 
-.card_item4{
-	order:4;
+.filtr>img{
+	display: none;
 }
 
-.card_item3{
-	order:3;
+.filtr2>form{
+	margin: 50px 60px;	
 }
 
-.card_item2{
-	order:2;
+
+
+.bron{
+	display: none;
+	position: fixed;
+	top:20px;
+	width: 570px;
+	flex-direction: column;
+	align-items: center;
+	background-color: #FFFEFD;
+	box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
+	border-radius: 10px;
+	
+
 }
 
-.card_item1{
-	order:1;
+.bron_alert{
+	display: none;
+	position: fixed;
+	top:40%;
+	width: 570px;
+	flex-direction: column;
+	align-items: center;
+	background: #FFFEFD;
+	box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
+	border-radius: 10px;
 }
 
+.bron>img,.bron_alert>img{
+	width: 16px;
+	position: absolute;
+	top:40px;
+	right:40px;
+}
+
+.bron>form{
+	display: flex;	
+	flex-direction: column;
+	width: 75%;
+	align-items: center;
+}
+
+.bron>form input{
+	margin-top: 20px;
+	border: 1px solid #D7D7D7;
+	box-sizing: border-box;
+	border-radius: 25px;
+	height: 52px;
+	padding-left:30px; 
+	width: 100%;
+	max-width: 430px;
+}
+
+.bron>form>button{
+	margin:50px 0 70px 0;
+}
+
+.bron>form>p{
+	margin:0;
+}
+
+.bron>h2{
+	margin:70px 0 20px 0;
+}
+
+.bron_alert>button{
+	max-width: 120px;
+	margin: 50px 0;
+}
+
+.bron_alert>h2{	
+	margin: 70px 0 25px 0;
+}
+
+.bron_alert>p{	
+	margin:0;
+}
 
 
 
@@ -320,6 +461,19 @@ footer>div{
 	.filtr{
 		display: none;
 	}
+
+	.select_box>button{
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		margin-right: 30px;
+	}
+
+	.select_box>button>img{
+		width:12px ;
+		height:15px;
+	}
+	
 
 	.action{
 		display: flex;
@@ -364,10 +518,68 @@ footer>div{
 	.map_text p img{
 		margin-right: 20px;
 	}
+
+	.bron{		
+		width: 502px;	
+	}
+	
+	.bron_alert{		
+		width: 502;		
+	}
 }
 
 @media(max-width:649px)
 {
+	.select_box>button{
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
+
+	.bron{		
+		width: 290px;	
+	}
+	
+	.bron_alert{		
+		width: 290px;		
+	}
+
+	.select_box>button>img{
+		width:12px ;
+		height:15px;
+	}
+
+	.select_box_button {
+		display: block;
+		justify-content: space-between;
+	}
+	.select_box_button>h1 {
+		margin: 40px 0;
+	}
+
+	.filtr2{
+		position: absolute;
+		width: 90%;
+		top:102px;
+		left:5%;
+		background: #FFFEFD;
+		box-shadow: 0px 4px 25px rgba(153, 153, 153, 0.25);
+		border-radius: 6px;
+		z-index: 100;
+	}
+	
+	.filtr2>img{
+		position: absolute;
+		right:20px;
+		top:20px;
+	}
+	
+	
+	.filtr2>form{
+		margin: 50px 25px;
+		
+	}
+
 	header>button{
 		display: flex;
 		width: 22px;
@@ -378,7 +590,17 @@ footer>div{
 	}
 
 	header>nav{
-		display: none;		
+		display: none;	
+		column-gap:30px;	
+	}
+
+
+	header{
+		display:flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		height: 76px;
 	}
 
 	.action{

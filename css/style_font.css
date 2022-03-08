@@ -114,3 +114,13 @@ footer>div>p{
 	line-height: 14px;
 	color: #8F8F8F;
 }
+
+.bron>h2{
+	font-size: 28px;
+}
+
+@media(max-width:649px){
+.bron>h2{
+	font-size: 24px;
+}
+}
