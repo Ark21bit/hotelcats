@@ -147,6 +147,8 @@ justify-content: space-between;
 	margin-right: 5px;
 }
 
+
+
 .select2 p:hover{
 	color:#FF7236;
 	cursor: pointer;
@@ -166,7 +168,7 @@ justify-content: space-between;
 	
 }
 
-.card img{
+.card_item>img{
 	width: 100%;
 }
 
@@ -454,6 +456,29 @@ footer>div{
 	margin:0;
 }
 
+.photo{
+	display: inline-block; /* Строчно-блочный элемент */
+    position: relative;
+	margin-left: 8px;
+}
+
+.photo:hover::after {	
+	content: attr(data-title); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    left: -20px; top: -40px; /* Положение подсказки */
+    z-index: 100; /* Отображаем подсказку поверх других элементов */
+   
+    font-family: Arial, sans-serif; /* Гарнитура шрифта */
+    font-size: 12px; /* Размер текста подсказки */
+    padding: 10px 10px; /* Поля */
+    background: #FFFFFF;
+	box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.18);
+	border-radius: 4px;
+	border: 1px solid;
+	border-color: #FAC663;
+	width: max-content;
+}
+
 
 
 @media(max-width:989px)
@@ -525,6 +550,12 @@ footer>div{
 	
 	.bron_alert{		
 		width: 502;		
+	}
+
+	.bron>img,.bron_alert>img{
+		
+		top:25px;
+		right:25px;
 	}
 }
 
@@ -663,4 +694,22 @@ footer>div{
 	footer>div>div>img{
 		margin:30px 0 20px 0;
 	}	
+
+	.bron>img,.bron_alert>img{
+		
+		top:20px;
+		right:20px;
+	}
+
+	.bron>h2 {
+		max-width: 170px;
+		font-size: 24px;
+		text-align: center;
+	}
+
+	.bron_alert>p {
+		margin: 0;
+		max-width: 150px;
+		text-align: center;
+	}
 }
