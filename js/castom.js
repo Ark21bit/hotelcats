@@ -156,8 +156,8 @@ const app = new Vue({
     },
     methods: {
         getfilter(){
-            this.cards.filter = this.cards.initial.filter(card =>this.forms.square.includes(card.square));
-            this.cards.filter = this.cards.initial.filter(card =>between(card.price, this.forms.price.one, this.forms.price.two));
+            let Obj = this.cards.initial.filter(card =>this.forms.square.includes(card.square));
+            this.cards.filter = Obj.filter(card =>between(card.price, this.forms.price.one, this.forms.price.two));
         }
         
     },
