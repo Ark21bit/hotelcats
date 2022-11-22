@@ -1,0 +1,62 @@
+body{
+	color: #1A212F;
+	font-family: 'Arial';
+}
+
+#text14{
+	font-family: 'Arial';
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 17px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+
+h3,h4,h5,h6{
+	font-family: 'Rubik';
+	font-style: normal;
+	
+}
+
+h1{
+	font-family: 'Rubik';
+	font-style: normal;
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 43px;
+}
+
+h2{
+	font-family: 'Rubik';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 24px;
+}
+
+button{	
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 17px;
+}
+
+.nav{	
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 19px; 
+}
+
+.card_item span{
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+}
+
+.margin_top{
+	margin-top: 0;
+}

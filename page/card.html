@@ -1,0 +1,140 @@
+<!DOCTYPE html> 
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Каталог</title>	 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="../css/style.css" rel="stylesheet"> 
+		<link href="../css/style_font.css" rel="stylesheet"> 	
+		<link href="../css/checkbox.css" rel="stylesheet"> 
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato&family=Rubik&display=swap" rel="stylesheet">
+	</head> 
+	<body>
+			<div class="page">
+				<header>
+					<div>
+						<img src="../img/лого.svg" alt="">
+					</div>
+					<button onclick="menu()"></button>
+					<nav>
+						<a href="#">Почему мы?</a>
+						<a href="#">Номера</a>
+						<a href="#">Отзывы</a>
+						<a href="#">Как нас найти</a>
+					</nav>					
+				</header>
+
+				<div class="header_mobile">
+					<div class="header_box">
+						<div>
+							<img src="../img/лого.svg" alt="">
+						</div>
+						<nav>
+							<a href="#"><b>Почему мы?   </b>  </a>
+							<a href="#"><b>Номера       </b> </a>
+							<a href="#"><b>Отзывы       </b>  </a>
+							<a href="#"><b>Как нас найти</b></a>
+						</nav>
+						<p>8 (800) 333-55-99</p>
+						<p><img src="../img/icon_soc1.svg" alt=""> <img src="../img/icon_soc2.svg" alt=""><img src="../img/icon_soc3.svg" alt=""></p>
+						<img onclick="menu_closed()" src="img/krest.svg" alt="">
+					</div>
+				</div>
+
+				<main>
+					
+					<div class="card_box">
+						<div class="card_box_img">
+							<div><img src="../img/card_cat1.png" alt=""></div>
+							<div><img src="../img/card_cat2.png" alt=""></div>
+							<div><img src="../img/card_cat3.png" alt=""></div>
+						</div>
+						<div class="img_box"><img src="../img/cat_img4.png" alt=""></div>
+						<div>
+							<div class="card_box_text">
+								<h2><b>Супер-Люкс</h2></b>
+								<div class="card_text">
+									<p>Размеры (ШхГхВ) - 180х160х180 см</p>
+									<p>Площадь - 2,88 м2</p>
+									<p>Оснащение номера</p>
+								</div>
+								<div class="icon_text" id="icon_text">
+									<p class="p_img"><img src="../img/icon_card3.svg" alt=""> Лежак</p>
+									<p class="p_img"><img src="../img/icon_card4.svg" alt=""> Домик</p>
+									<p class="p_img"><img src="../img/icon_card6.svg" alt=""> Игровой комплекс - 3 яруса</p>
+									<p class="p_img"><img src="../img/icon_card5.svg" alt=""> Когтеточка</p>
+								</div>
+								<p>Цена за сутки: <span>600₽</span></p>
+								<button onclick="bron()">Забронировать <img src="../img/paw.svg" alt=""></button>
+							</div>
+						</div>
+					</div>
+					
+
+					<div class="container_map">
+						<div class="map_text">
+							<p class="h1">Как нас найти</p>
+							<span>Адрес</span>
+							<p>Санкт-Петербург,
+							ул Большая Конюшенная, д 19</p>
+							<span>Режим работы</span>
+							<p>Ежедневно, с 9:00 до 20:00</p>
+							<span>Телефон</span>
+							<p>8 (800) 333-55-99</p>
+							<span>E-mail</span>
+							<p>info@cat-hotel.ru</p>
+							<span>Социальные сети</span>
+							<p><img src="../img/icon_soc1.svg" alt=""> <img src="../img/icon_soc2.svg" alt=""><img src="../img/icon_soc3.svg" alt=""></p>
+						</div>
+						<div class="map" id="map"><script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU"></script></div>
+					</div>
+
+				</main>
+				<footer>
+					<div>
+						<div>
+							<img src="img/лого.svg" alt="">
+						</div>
+
+						<nav>
+							<a href="#">Почему мы?</a>
+							<a href="#">Номера</a>
+							<a href="#">Отзывы</a>
+							<a href="#">Как нас найти</a>
+						</nav>
+					</div>
+					<div>
+						<p><img src="img/Copyright.svg" alt=""> 2019 Все права защищены</p>
+						<p>Политика конфиденциальности</p>
+					</div>
+				</footer>
+			</div>
+
+			
+				<div class="bron">
+					<img onclick="bron_closed()" src="img/krest.svg" alt="">
+					<h2>Забронировать номер</h2>
+					<form action="#">
+						<input type="text" name="name" placeholder="Ваше имя" id="">
+						<input type="text" name="name_pet" placeholder="Имя Питомца" id="">
+						<input type="text" name="telefon" placeholder="Телефон" id="">
+						<input type="text" name="e-mail" placeholder="E-mail" id="">
+						<button type="submit" onclick="bron_closed(),bron_alert()" >Отправить заявку <img src="img/button_icon.svg" alt=""></button>
+					</form>
+				</div>
+
+				<div class="bron_alert">
+					<img src="../img/krest.svg" onclick="bron_alert_closed()" alt="">
+					<h2>Спасибо за заявку!</h2>
+					<p>Мы свяжемся с вами в ближайшее время</p>
+					<button onclick="bron_alert_closed()" type="button">Ок<img src="img/button_icon.svg"></button>
+				</div>
+				
+	<script src="../JavaScript.js"></script>
+	<script src="../map.js"></script>
+	
+	</body> 
+</html>   

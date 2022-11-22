@@ -1,0 +1,140 @@
+<!DOCTYPE html> 
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Каталог</title>	 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/style.css" rel="stylesheet"> 
+		<link href="css/style_font.css" rel="stylesheet"> 	
+		<link href="css/checkbox.css" rel="stylesheet"> 
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato&family=Rubik&display=swap" rel="stylesheet">
+	</head> 
+	<body>
+			<div class="page" >
+				<header>
+					<div>
+						<img src="img/лого.svg" alt="">
+					</div>
+					<button></button>
+					<nav>
+						<a href="#">Почему мы?</a>
+						<a href="#">Номера</a>
+						<a href="#">Отзывы</a>
+						<a href="#">Как нас найти</a>
+					</nav>					
+				</header>
+
+				<div class="header_mobile">
+					<div class="header_box">
+						<div>
+							<img src="img/лого.svg" alt="">
+						</div>
+						<nav>
+							<a href="#"><b>Почему мы?   </b>  </a>
+							<a href="#"><b>Номера       </b> </a>
+							<a href="#"><b>Отзывы       </b>  </a>
+							<a href="#"><b>Как нас найти</b></a>
+						</nav>
+						<p>8 (800) 333-55-99</p>
+						<p><img src="img/icon_soc1.svg" alt=""> <img src="img/icon_soc2.svg" alt=""><img src="img/icon_soc3.svg" alt=""></p>
+						<img  src="img/krest.svg" alt="">
+					</div>
+				</div>
+
+				<main id="app">
+					<div class="select_box_button"> 
+						<h1>Наши номера</h1>
+						<div class="select_box">
+							<button><img  src="img/filtr.svg" alt="">Фильтры</button>
+							<div class="select2">
+								<p   id="select_active" class="select_item_active" value="По площади" ><img src="img/arrow_filtr.svg" alt="">По площади</p>	
+								<div class="select3" id="select3">
+									<div class="select4">
+										<p  class="select_item" value="По площади" ><img src="img/arrow_filtr.svg" alt="">По площади</p>
+										<p  class="select_item" value="По площади вниз">   <img src="img/arrow_filtr2.svg" alt="">По площади</p>
+										<p  class="select_item" value="По цене вверх">		<img src="img/arrow_filtr.svg" alt=""> По цене</p>
+										<p  class="select_item" value="По цене вниз">		<img src="img/arrow_filtr2.svg" alt="">По цене</p>
+									</div>
+									<div class="select_img"><img src="img/select2.svg" alt=""></div>
+								</div>
+							</div>
+						</div> 	
+					</div>
+
+					<div class="Container_card_filtr">
+						<div class="filtr">
+							<img  src="img/krest.svg" alt="">
+							<form action="#" class="form2">
+								<div > 
+									<p class="margin_top">Цена за сутки,</p>
+									<div id="textbox">
+										<input type="text" v-model="forms.price.one" id="price1" placeholder="от 100">
+										<input type="text" v-model="forms.price.two" id="price2"  placeholder="до 600">
+									</div>
+								</div>
+								<div >
+									{{forms.price.one}}
+									{{forms.price.two}}
+									<p>Площадь</p>
+									<label  id="square1" class="custom-checkbox" ><input type="checkbox" v-model="forms.square"  value="0,63"><span>0,63 м2</span></label>
+									<label  id="square2" class="custom-checkbox" ><input type="checkbox" v-model="forms.square"  value="0,90"><span>0,90 м2</span></label>
+									<label  id="square3" class="custom-checkbox" ><input type="checkbox" v-model="forms.square"  value="1,13"><span>1,13 м2</span></label>
+									<label  id="square4" class="custom-checkbox" ><input type="checkbox" v-model="forms.square"  value="1,56"><span>1,56 м2</span></label>
+									<label  id="square5" class="custom-checkbox" ><input type="checkbox" v-model="forms.square"  value="2,56"><span>2,56 м2</span></label>
+									<label  id="square6" class="custom-checkbox" ><input type="checkbox" v-model="forms.square"  value="2,88"><span>2,88 м2</span></label>
+								</div>
+								<div >
+									<p>Оснащение номера</p>
+									<label class="custom-checkbox" ><input type="checkbox"  checked="checked" id="" value="1"><span>Пустой номер</span></label>
+									<label class="custom-checkbox" ><input type="checkbox"  checked="checked" id="" value="2"><span>Лежак</span></label>
+									<label class="custom-checkbox" ><input type="checkbox"  checked="checked" id="" value="3"><span>Когтеточка</span></label>
+									<label class="custom-checkbox" ><input type="checkbox"  checked="checked" id="" value="4"><span>Игровой-комплекс</span></label>
+									<label class="custom-checkbox" ><input type="checkbox"  checked="checked" id="" value="5"><span>Домик</span></label>									
+								</div> 
+								<button class="button_reset" @click.prevent="getfilter">Сбросить фильтр</button>
+							</form>
+						</div>
+						
+						<div class="card" id="text14">
+							<div class="card_item" v-for="card in cards.filter">
+								<img v-bind:src="card.imgUrl" alt="">
+								<div class="card_text_button">
+									<div>
+										<h2>{{card.view}}</h2>
+										<p>Размеры (ШхГхВ) - {{card.size}} см</p>
+										<p class="p">Площадь - {{card.square}} м2</p>
+										<p class="card_icon">Оснащение номера<div class="photo" data-title="Лежак"><img src="img/icon_card3.svg"></div><div class="photo" data-title="Когтеточка"><img src="img/icon_card4.svg"></div><div class="photo" data-title="Игровой-комплекс"><img src="img/icon_card6.svg" data-title="Игровой-комплекс"></div></p>
+										<p>Цена за сутки:<span class="t"> {{card.price}}₽</span></p>										
+									</div>
+									<button >Забронировать<img src="img/button_icon.svg" alt=""></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</main>
+				<footer>
+					<div>
+						<div>
+							<img src="img/лого.svg" alt="">
+						</div>
+
+						<nav>
+							<a href="#">Почему мы?</a>
+							<a href="#">Номера</a>
+							<a href="#">Отзывы</a>
+							<a href="#">Как нас найти</a>
+						</nav>
+					</div>
+					<div>
+						<p><img src="img/Copyright.svg" alt=""> 2019 Все права защищены</p>
+						<p>Политика конфиденциальности</p>
+					</div>
+				</footer>
+			</div>
+	<script src="js/vue.js"></script>
+	<script src="js/castom.js"></script>	
+	</body> 
+</html>   
