@@ -548,8 +548,10 @@ footer>div{
 
 @media(max-width:989px)
 {
-	.filtr{
-		display: none;
+	.Container_card_filtr {
+    		display: flex;
+    		gap: 90px;
+    		flex-direction: column;
 	}
 
 	.select_box>button{
